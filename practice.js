@@ -87,4 +87,23 @@ var paige = function(N) {
  var whatinthewhoody = paige(10)
  whatinthewhoody(10);
 
+ // Another sample: 
 
+ function funky(f, callTimes) {
+  var count = 0;
+  return function() {
+    if (count < callTimes) {
+      f();
+      count++;
+    } else {
+      console.log('STAHHP');
+    } 
+  }
+}
+var returnedF = funky(function() {
+  console.log('first');
+}, 2);
+
+returnedF();
+returnedF();
+returnedF();
